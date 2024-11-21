@@ -37,12 +37,14 @@ public class ClienteServiceImpl implements ClienteService{
 		cli.setNombres(cliente.getNombres());
 		cli.setDni(cliente.getDni());
 		cli.setCiudad(cliente.getCiudad());
-		cli.setEstado(cliente.getEstado());
 		cli.setCorreo(cliente.getCorreo());
-		
-		
-		clienteRepository.save(cli);
+		if(cliente.getEstado() == null ) {
+			cli.setEstado(true);
+		}else {
+			cli.setEstado(cliente.getEstado());
 		}
+		clienteRepository.save(cli);
+	}
 	@Override
 	public void eliminarCliente(Long id) {
 		clienteRepository.deleteById(id);
