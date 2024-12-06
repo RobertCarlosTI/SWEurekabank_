@@ -107,9 +107,11 @@
                                 </a>
                             </td>
                             <td>
-                                <a th:href="@{/views/empleado/delete/{id} (id=${empleado.id})}" class="btn btn-danger">
-                                    <i class="fas fa-trash-alt"></i> Eliminar
-                                </a>
+                                <a th:href="@{/views/empleado/delete/{id} (id=${empleado.id})}" 
+                               class="btn btn-sm btn-danger shadow-sm"
+                               onclick="return confirm('¿Estás seguro de que deseas eliminar este empleado?');">
+                                <i class="fas fa-trash-alt"></i> Eliminar
+                            </a>
                             </td>
                         </tr>
                     </tbody>
